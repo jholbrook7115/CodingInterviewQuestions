@@ -1,4 +1,4 @@
-package com.jholbroook.StringManipulation;
+package com.jholbrook.StringManipulation;
 
 /*
     The goal of this class is to replace the spaces in a char[] with "%20"

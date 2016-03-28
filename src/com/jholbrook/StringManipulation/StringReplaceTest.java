@@ -1,4 +1,4 @@
-package com.jholbroook.StringManipulation;
+package com.jholbrook.StringManipulation;
 
 //Test class for the StringReplace Class
 import org.junit.Test;
