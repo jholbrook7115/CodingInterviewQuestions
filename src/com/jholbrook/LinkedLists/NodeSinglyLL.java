@@ -23,4 +23,5 @@ public class NodeSinglyLL {
         }
         head.next = newNode;
     }
+
 }
