@@ -4,6 +4,9 @@ package com.jholbrook.LinkedLists;
     Test class for the NodeSinglyLL class
  */
 import org.junit.Test;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.*;
 
 public class NodeSinglyLLTest {
@@ -94,4 +97,15 @@ public class NodeSinglyLLTest {
 
     }
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    //This test should return an exception or it will not pass
+    @Test
+    public void testInsertBefore_invalidIndex() throws NullPointerException{
+        NodeSinglyLL head = new NodeSinglyLL(1);
+        head.appendToTail(2);
+        thrown.expect(NullPointerException.class);
+        head.insertBefore(3, 6);
+    }
 }
