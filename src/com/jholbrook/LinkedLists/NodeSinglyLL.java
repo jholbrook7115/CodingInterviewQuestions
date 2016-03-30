@@ -3,7 +3,7 @@ package com.jholbrook.LinkedLists;
 /*
     This is a full-sized implementation of a node in a singly-linked list including:
         - appending to tail
-        
+        - inserting new nodes before specified index
 
  */
 public class NodeSinglyLL {
@@ -51,5 +51,28 @@ public class NodeSinglyLL {
         }
         newNode.next = head.next;
         head.next = newNode;
+    }
+
+    //accepts an array of integers to insert before the index given
+    public void insertBefore(int index, int[] data){
+        if(data.length <= 0){
+            return;
+        }
+        NodeSinglyLL head = this;
+        //create a new linked list from the new array of data
+        NodeSinglyLL subHead = new NodeSinglyLL(data[0]);
+        for(int i = 1; i< data.length; i++ ){
+            subHead.appendToTail(data[i]);
+        }
+        NodeSinglyLL subTail = subHead;
+        while(subTail.next != null){
+            subTail = subTail.next;
+        }
+
+        for(int i = 1; i < index; i++){
+            head = head.next;
+        }
+        subTail.next = head.next;
+        head.next = subHead;
     }
 }

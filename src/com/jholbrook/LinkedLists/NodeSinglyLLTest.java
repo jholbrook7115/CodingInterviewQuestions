@@ -69,4 +69,29 @@ public class NodeSinglyLLTest {
         assertEquals("3rd item (index==2) in the linked list should have the value 5", expected, actual);
     }
 
+    @Test
+    public void testInsertBefore_intArray(){
+        NodeSinglyLL head = new NodeSinglyLL(1);
+        NodeSinglyLL testHead = head;
+        head.appendToTail(2);
+        head.appendToTail(3);
+        head.appendToTail(4);
+
+        int index = 2;
+        int[] newNodesData = {5, 6, 7, 8, 9};
+        head.insertBefore(index, newNodesData);
+
+        for(int i = 0; i < index; i++){
+            testHead = testHead.next;
+        }
+
+        for(int i = 0; i < newNodesData.length; i++){
+            int expected = newNodesData[i];
+            int actual = testHead.data;
+            assertEquals("value of data at index " + (index+i) + " should be " + newNodesData[i], expected, actual);
+            testHead = testHead.next;
+        }
+
+    }
+
 }
