@@ -38,7 +38,7 @@ public class NodeSinglyLLTest {
     }
 
     @Test
-    public void testInsertBefore(){
+    public void testInsertBefore_int(){
         NodeSinglyLL head = new NodeSinglyLL(1);
 
         head.appendToTail(2);
@@ -48,6 +48,23 @@ public class NodeSinglyLLTest {
         head.insertBefore(2, 5);
 
         int expected = 5;
+        int actual = head.next.next.data;
+        assertEquals("3rd item (index==2) in the linked list should have the value 5", expected, actual);
+    }
+
+    @Test
+    public void testInsertBefore_Node(){
+        NodeSinglyLL head = new NodeSinglyLL(1);
+
+        head.appendToTail(2);
+        head.appendToTail(3);
+        head.appendToTail(4);
+
+        NodeSinglyLL newNode = new NodeSinglyLL(5);
+
+        head.insertBefore(2, newNode);
+
+        int expected = newNode.data;
         int actual = head.next.next.data;
         assertEquals("3rd item (index==2) in the linked list should have the value 5", expected, actual);
     }
