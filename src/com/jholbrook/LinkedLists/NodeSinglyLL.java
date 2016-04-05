@@ -10,14 +10,31 @@ public class NodeSinglyLL {
 
     public int data;
     public NodeSinglyLL next;
+    public String str;
+    public char ch;
+
     public NodeSinglyLL(int data){
         this.data = data;
         this.next = null;
     }
 
+    public NodeSinglyLL(char ch){
+        this.ch = ch;
+    }
+
     public void appendToTail(int data){
         NodeSinglyLL head = this;
         NodeSinglyLL newNode = new NodeSinglyLL(data);
+
+        while(head.next != null){
+            head = head.next;
+        }
+        head.next = newNode;
+    }
+
+    public void appendToTail(char ch){
+        NodeSinglyLL head = this;
+        NodeSinglyLL newNode = new NodeSinglyLL(ch);
 
         while(head.next != null){
             head = head.next;
@@ -42,7 +59,7 @@ public class NodeSinglyLL {
         newNode.next = head.next;
         head.next = newNode;
     }
-    //insertBefore but with existing Nodes
+    //insertBefore but with a node as input
     public void insertBefore(int index, NodeSinglyLL newNode){
         NodeSinglyLL head = this;
 

@@ -108,4 +108,27 @@ public class NodeSinglyLLTest {
         thrown.expect(NullPointerException.class);
         head.insertBefore(3, 6);
     }
+
+    @Test
+    public void testCreateNodeWithChar(){
+        NodeSinglyLL head = new NodeSinglyLL('a');
+
+        char expected = 'a';
+        char actual = head.ch;
+        assertEquals("value of data at index 0 should equal 'a' " , expected, actual);
+
+    }
+
+    @Test
+    public void testAppendNodeWithChar(){
+        NodeSinglyLL head = new NodeSinglyLL('a');
+        head.appendToTail('b');
+        head.appendToTail('c');
+
+        char[] expected = {'a', 'b', 'c'};
+        char[] actual = {head.ch, head.next.ch, head.next.next.ch};
+        for(int i = 0; i < 3; i++) {
+            assertEquals("value of data at index" + i + "should equal " + expected[i], expected[i], actual[i]);
+        }
+    }
 }

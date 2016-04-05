@@ -10,12 +10,16 @@ package com.jholbrook.LinkedLists;
 public class PalindromeFinder {
 
     public static boolean isPalindrome(NodeSinglyLL head){
+        int midIndex;
+        while(head.next.next != null){
+
+        }
         boolean result = traverse(head, 0);
         return result;
     }
 
     private static boolean traverse(NodeSinglyLL node, int index){
-
+        
         return false;
     }
 }
