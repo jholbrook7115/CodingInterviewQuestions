@@ -9,23 +9,33 @@ package com.jholbrook.LinkedLists;
 
 public class PalindromeFinder {
 
-    private static NodeSinglyLL firstptr;
-    private static NodeSinglyLL midptr;
+    private static NodeSinglyLL firstPtr;
+    //private static NodeSinglyLL midptr;
     public static boolean isPalindrome(NodeSinglyLL head){
-        firstptr = head;
-        midptr = head;
+        firstPtr = head;
+        NodeSinglyLL midPtr = head;
 
         int midIndex;
         while(head.next.next != null){
-            midptr = midptr.next;
-            head = midptr.next.next;
+            midPtr = midPtr.next;
+            head = head.next.next;
         }
-        boolean result = traverse(firstptr, 0);
+        //test for one last node in the list
+        if(head.next != null){
+            head = head.next;
+            midPtr = midPtr.next;
+        }
+
+        boolean result = traverse(midPtr, 0);
         return result;
     }
 
-    private static boolean traverse(NodeSinglyLL node, int index){
+    private static boolean traverse(NodeSinglyLL midPtr, int index){
+        while(midPtr.next != null){
+            if(midPtr.ch == firstPtr.ch){
 
+            }
+        }
         return false;
     }
 }
