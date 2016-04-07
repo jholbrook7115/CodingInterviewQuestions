@@ -3,7 +3,8 @@ package com.jholbrook.LinkedLists;
 
 public class NodeDoubleyLL {
 
-    public int data;
+    public Object data;
+    //public int data;
     public NodeDoubleyLL next;
     public NodeDoubleyLL prev;
     public String str;
@@ -15,9 +16,9 @@ public class NodeDoubleyLL {
         this.prev = null;
     }
 
-    public NodeDoubleyLL(char ch){
+    public NodeDoubleyLL(Object item){
 
-        this.ch = ch;
+        this.data = item;
         this.next = null;
         this.prev = null;
     }
@@ -33,9 +34,9 @@ public class NodeDoubleyLL {
         newNode.prev = head;
     }
 
-    public void appendToTail(char ch){
+    public void appendToTail(Object item){
         NodeDoubleyLL head = this;
-        NodeDoubleyLL newNode = new NodeDoubleyLL(ch);
+        NodeDoubleyLL newNode = new NodeDoubleyLL(item);
 
         while(head.next != null){
             head = head.next;

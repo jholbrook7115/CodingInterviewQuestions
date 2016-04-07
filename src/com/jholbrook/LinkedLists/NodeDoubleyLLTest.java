@@ -11,7 +11,7 @@ public class NodeDoubleyLLTest {
         NodeDoubleyLL head = new NodeDoubleyLL(1);
 
         int expected = 1;
-        int actual = head.data;
+        int actual = (int)head.data;
 
         assertEquals("newly created head node should have int value 1", expected, actual);
     }
@@ -27,7 +27,7 @@ public class NodeDoubleyLLTest {
         while(head.next != null){
             head = head.next;
         }
-        int actual = head.data;
+        int actual = (int)head.data;
 
         assertEquals("3rd node in the list shoudl have int value 3", expected, actual);
     }
@@ -44,7 +44,7 @@ public class NodeDoubleyLLTest {
         for(int i = 0; i < 3; i++){
             head = head.next;
         }
-        int actual1 = head.data;
+        int actual1 = (int)head.data;
 
         assertEquals("third element in the list should have int value 3", expected1, actual1);
 
@@ -52,7 +52,7 @@ public class NodeDoubleyLLTest {
         for(int i = 0; i < 2; i++){
             head = head.prev;
         }
-        int actual2 = head.data;
+        int actual2 = (int)head.data;
         assertEquals("second element in the list should have int value 2", expected2, actual2);
     }
 
