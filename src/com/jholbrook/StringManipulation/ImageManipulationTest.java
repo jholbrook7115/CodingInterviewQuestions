@@ -1,4 +1,4 @@
-package com.jholbroook.StringManipulation;
+package com.jholbrook.StringManipulation;
 
 import static org.junit.Assert.*;
 import org.junit.Test;

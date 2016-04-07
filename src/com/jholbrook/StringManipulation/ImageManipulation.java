@@ -1,4 +1,4 @@
-package com.jholbroook.StringManipulation;
+package com.jholbrook.StringManipulation;
 
 /*
    Cracking the Coding Interview 5th Edition
